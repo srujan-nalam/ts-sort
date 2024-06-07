@@ -1,23 +1,29 @@
-class Sorter{
+import { CharctersColection } from "./CharctersCollection";
+import { LinkedList } from "./LinkedList";
+import { NumbersCollection } from "./NumbersCollection";
+import { Sorter } from "./Sorter";
 
-    constructor(public collection: number[]){}
 
-    sort(): void{
-        const { length } = this.collection;
+const numbersCollection = new NumbersCollection([-10, 3, -5, 0]);
+numbersCollection.sort()
+console.log(numbersCollection.data);
 
-        for (let i=0; i< length; i++){
-            for (let j = 0; j < length -i -1; j++) {
-                if(this.collection[j] > this.collection[j+1]){
-                    const temp = this.collection[j];
-                    this.collection[j] = this.collection[j+1];
-                    this.collection[j+1] = temp;
-                }
-                
-            }
-        }
-    }
-}
+const charCollection = new CharctersColection('SruJaN');
+charCollection.sort()
+console.log(charCollection.data);
 
-const sorter = new Sorter([10, 3, -5, 0]);
-sorter.sort();
-console.log(sorter.collection);
+
+const linkedList = new LinkedList()
+linkedList.add(2)
+linkedList.add(95)
+linkedList.add(-2)
+linkedList.add(9)
+linkedList.add(-10)
+linkedList.print()
+
+linkedList.sort()
+console.log("Sorted LinkedList");
+
+linkedList.print()
+
+
